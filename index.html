@@ -27,8 +27,9 @@
 </head>
 <body>
 
-<h1 id="winner"></h1>
 <div id="board">
+	<h1 id="winner"></h1>
+
     <table>
       <tr id="row1">
         <td class="square"></td>
@@ -116,9 +117,9 @@ function wonVariableLength(board){
 			return columnsArray[k][0]+" has won in column "+ (k+1);
 
 		}	else if((left_diagnol.join('')==check_x)||(left_diagnol.join('')==check_o)){
-				return "left diagnol has won"
+				return left_diagnol[0]+" has won on left diagnol"
 		} else if((right_diagnol.join('')==check_x)||(right_diagnol.join('')==check_o)){
-				return "right diagnol has won"
+				return right_diagnol[0]+" has won on right diagnol"
 		}
 	}
 		return false;
