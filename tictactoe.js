@@ -141,6 +141,8 @@ function createBoard(rows){
 				td.addEventListener('click', function(event){
 			if(event.target.innerText==""){
 			event.target.innerText=turn;
+			var checkbox=document.getElementById('check').checked;
+			if(checkbox==true){
 				if(turn=="x")
 			{
 				turn="o"
@@ -148,11 +150,17 @@ function createBoard(rows){
 				turn="x"
 				
 			}
-			else{
-			
-		
+		}
+		else{
+			if(turn=="x"){
+				turn="o";
 			}
-				var board=countBoard()
+			else{
+				turn="x";
+			}
+
+		}
+			var board=countBoard()
 		if(wonVariableLength(board) != false){
 			document.getElementById('winner').innerText=wonVariableLength(board);
 			setTimeout(clearBoard, 2000)
