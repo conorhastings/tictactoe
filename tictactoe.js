@@ -10,38 +10,42 @@
 
 
 
-	var turn="x";
+var turn="x";
+
 
 	var square=document.getElementsByClassName('square');
 
-	for(i=0; i < square.length; i++){
+	// for(i=0; i < square.length; i++){
 
-		square[i].addEventListener('click', function(event){
-			if(event.target.innerText==""){
-			event.target.innerText=turn;
-				if(turn=="x")
-			{
-				turn="o"
-			}
-			else{
-				turn="x"
-			}
-				var board=countBoard()
+	// 	square[i].addEventListener('click', function(event){
+	// 		if(event.target.innerText==""){
+	// 		event.target.innerText=turn;
+	// 		switchTurn()
+	// 			var board=countBoard()
 				
-		if(wonVariableLength(board) != false){
-			document.getElementById('winner').innerText=wonVariableLength(board);
-			setTimeout(clearBoard, 2000)
+	// 	if(wonVariableLength(board) != false){
+	// 		document.getElementById('winner').innerText=wonVariableLength(board);
+	// 		setTimeout(clearBoard, 2000)
 			
-		}
-		}
+	// 	}else{
+	// 		console.log('hello');
+	// 	}
+	// 	}
 
-		else{
-			window.alert("you can't go there!")
-		}
+	// 	else{
+	// 		window.alert("you can't go there!")
+	// 	}
+
+
+
 		
-	});
+	// });
 
-	}
+
+
+
+
+	// }
 
 
 function countBoard(){
@@ -58,13 +62,13 @@ function countBoard(){
 				
 				var count=squares_per_row;
 				for(var j=0; j < (all_squares.length); j+=squares_per_row){
-					console.log(all_squares.length-squares_per_row)
+				
 					var new_array=all_squares.slice(j, count)
 					rows.push(new_array);
 					count+=squares_per_row
 				}
 				
-				console.log(rows)
+				
 
 			return rows;
 
@@ -121,6 +125,8 @@ function clearBoard(){
 }
 
 function createBoard(rows){
+	var table=document.getElementById('board');
+	table.innerHTML='';
 	var board=document.getElementById('board');
 
 	for(var i=0; i < rows; i++){
@@ -138,9 +144,13 @@ function createBoard(rows){
 				if(turn=="x")
 			{
 				turn="o"
+					reallyBadAI()
+				turn="x"
+				
 			}
 			else{
-				turn="x"
+			
+		
 			}
 				var board=countBoard()
 		if(wonVariableLength(board) != false){
@@ -159,6 +169,21 @@ function createBoard(rows){
 		}
 }
 
+function reallyBadAI(){
+
+	var squares=document.getElementsByClassName('square');
+	
+	for(var i=0; i <1000000; i++){
+		var random= Math.floor(Math.random() * squares.length);
+		var random_square=squares[random];
+		if(random_square.innerText==''){
+
+			random_square.innerText=turn;
+			
+			return;
+		}
+	}
+}
 
 
 
