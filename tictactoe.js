@@ -170,21 +170,22 @@ function createBoard(rows){
 }
 
 function reallyBadAI(){
+	var board=countBoard()
+	if(wonVariableLength(board)==false){
+		var squares=document.getElementsByClassName('square');
+		
+		for(var i=0; i <1000000; i++){
+			var random= Math.floor(Math.random() * squares.length);
+			var random_square=squares[random];
+			if(random_square.innerText==''){
 
-	var squares=document.getElementsByClassName('square');
-	
-	for(var i=0; i <1000000; i++){
-		var random= Math.floor(Math.random() * squares.length);
-		var random_square=squares[random];
-		if(random_square.innerText==''){
-
-			random_square.innerText=turn;
-			
-			return;
+				random_square.innerText=turn;
+				
+				return;
+			}
 		}
 	}
 }
-
 
 
 
