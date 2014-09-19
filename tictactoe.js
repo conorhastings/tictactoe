@@ -121,6 +121,8 @@ function clearBoard(){
 }
 
 function createBoard(rows){
+	var table=document.getElementById('board');
+	table.innerHTML='';
 	var board=document.getElementById('board');
 
 	for(var i=0; i < rows; i++){
