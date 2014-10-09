@@ -15,37 +15,6 @@ var turn="x";
 
 	var square=document.getElementsByClassName('square');
 
-	// for(i=0; i < square.length; i++){
-
-	// 	square[i].addEventListener('click', function(event){
-	// 		if(event.target.innerText==""){
-	// 		event.target.innerText=turn;
-	// 		switchTurn()
-	// 			var board=countBoard()
-				
-	// 	if(wonVariableLength(board) != false){
-	// 		document.getElementById('winner').innerText=wonVariableLength(board);
-	// 		setTimeout(clearBoard, 2000)
-			
-	// 	}else{
-	// 		console.log('hello');
-	// 	}
-	// 	}
-
-	// 	else{
-	// 		window.alert("you can't go there!")
-	// 	}
-
-
-
-		
-	// });
-
-
-
-
-
-	// }
 
 
 function countBoard(){
