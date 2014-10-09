@@ -2,4 +2,4 @@ tictactoe
 =========
 
 
-play at github.io/tictactoe
+play  [here](http://conorhastings.github.io/tictactoe) 
