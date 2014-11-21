@@ -2,4 +2,4 @@ tic tac toe
 =========
 
 
-play  [here](http://conorhastings.github.io/tictactoe) . do it
+play  [here](http://conorhastings.github.io/tictactoe) .
