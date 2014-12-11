@@ -69,9 +69,9 @@ function wonVariableLength(board){
 			return columnsArray[k][0]+" has won in column "+ (k+1);
 
 		}	else if((left_diagnol.join('')==check_x)||(left_diagnol.join('')==check_o)){
-				return left_diagnol[0]+" has won on left diagonal"
+				return left_diagnol[0]+" has won on left diagnol"
 		} else if((right_diagnol.join('')==check_x)||(right_diagnol.join('')==check_o)){
-				return right_diagnol[0]+" has won on right diagonal"
+				return right_diagnol[0]+" has won on right diagnol"
 		}
 	}
 		return false;
@@ -110,7 +110,6 @@ function createBoard(rows){
 				td.addEventListener('click', function(event){
 			if(event.target.innerText==""){
 			event.target.innerText=turn;
-if(checkbox==true){
 				if(turn=="x")
 			{
 				turn="o"
@@ -118,16 +117,10 @@ if(checkbox==true){
 				turn="x"
 				
 			}
-		}
-		else{
-			if(turn=="x"){
-				turn="o";
-			}
 			else{
-				turn="x";
+			
+		
 			}
-
-		}
 				var board=countBoard()
 		if(wonVariableLength(board) != false){
 			document.getElementById('winner').innerText=wonVariableLength(board);
@@ -137,7 +130,7 @@ if(checkbox==true){
 		}
 
 		else{
-			window.alert("You can't go there!")
+			window.alert("you can't go there!")
 		}
 		
 	});
@@ -145,21 +138,21 @@ if(checkbox==true){
 		}
 }
 
-// function reallyBadAI(){
+function reallyBadAI(){
 
-// 	var squares=document.getElementsByClassName('square');
+	var squares=document.getElementsByClassName('square');
 	
-// 	for(var i=0; i <1000000; i++){
-// 		var random= Math.floor(Math.random() * squares.length);
-// 		var random_square=squares[random];
-// 		if(random_square.innerText==''){
+	for(var i=0; i <1000000; i++){
+		var random= Math.floor(Math.random() * squares.length);
+		var random_square=squares[random];
+		if(random_square.innerText==''){
 
-// 			random_square.innerText=turn;
+			random_square.innerText=turn;
 			
-// 			return;
-// 		}
-// 	}
-// }
+			return;
+		}
+	}
+}
 
 
 
