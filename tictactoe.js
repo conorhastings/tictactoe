@@ -69,9 +69,9 @@ function wonVariableLength(board){
 			return columnsArray[k][0]+" has won in column "+ (k+1);
 
 		}	else if((left_diagnol.join('')==check_x)||(left_diagnol.join('')==check_o)){
-				return left_diagnol[0]+" has won on left diagnol"
+				return left_diagnol[0]+" has won on left diagonal"
 		} else if((right_diagnol.join('')==check_x)||(right_diagnol.join('')==check_o)){
-				return right_diagnol[0]+" has won on right diagnol"
+				return right_diagnol[0]+" has won on right diagonal"
 		}
 	}
 		return false;
@@ -130,7 +130,7 @@ function createBoard(rows){
 		}
 
 		else{
-			window.alert("you can't go there!")
+			window.alert("You can't go there!")
 		}
 		
 	});
