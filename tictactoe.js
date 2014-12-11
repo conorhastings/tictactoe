@@ -110,6 +110,7 @@ function createBoard(rows){
 				td.addEventListener('click', function(event){
 			if(event.target.innerText==""){
 			event.target.innerText=turn;
+if(checkbox==true){
 				if(turn=="x")
 			{
 				turn="o"
@@ -117,10 +118,16 @@ function createBoard(rows){
 				turn="x"
 				
 			}
-			else{
-			
-		
+		}
+		else{
+			if(turn=="x"){
+				turn="o";
 			}
+			else{
+				turn="x";
+			}
+
+		}
 				var board=countBoard()
 		if(wonVariableLength(board) != false){
 			document.getElementById('winner').innerText=wonVariableLength(board);
@@ -138,21 +145,21 @@ function createBoard(rows){
 		}
 }
 
-function reallyBadAI(){
+// function reallyBadAI(){
 
-	var squares=document.getElementsByClassName('square');
+// 	var squares=document.getElementsByClassName('square');
 	
-	for(var i=0; i <1000000; i++){
-		var random= Math.floor(Math.random() * squares.length);
-		var random_square=squares[random];
-		if(random_square.innerText==''){
+// 	for(var i=0; i <1000000; i++){
+// 		var random= Math.floor(Math.random() * squares.length);
+// 		var random_square=squares[random];
+// 		if(random_square.innerText==''){
 
-			random_square.innerText=turn;
+// 			random_square.innerText=turn;
 			
-			return;
-		}
-	}
-}
+// 			return;
+// 		}
+// 	}
+// }
 
 
 
